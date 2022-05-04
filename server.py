@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request
-from search import score, retrieve, build_index
+from search import build_inv_index, score, retrieve, build_index
 from time import time
 
 app = Flask(__name__, template_folder='.')
 build_index()
+build_inv_index()
 
 
 @app.route('/', methods=['GET'])
